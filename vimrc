@@ -43,7 +43,7 @@ set cursorline        " highlight current line
 
 
 if has("gui_running")	" GUI color and font settings
-  set guifont=Consolas\ 13
+  set guifont=Consolas\ 16
   set background=dark
   set t_Co=256          " 256 color mode
   colors kolor
@@ -306,5 +306,5 @@ nmap <F8> :NERDTreeToggle<cr>
 nmap <F7> :TagbarToggle<CR>
 
 " Vim session
-let g:session_autosave='yes'
+let g:session_autosave='no'
 let g:session_autoload='no'
