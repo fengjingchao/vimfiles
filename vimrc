@@ -71,11 +71,10 @@ autocmd BufNewFile,BufRead *.sass   set ft=sass.css
     set softtabstop=2
     set shiftwidth=2
     set linespace=2
-
 " }
 
 autocmd FileType python setlocal shiftwidth=4 softtabstop=4
-autocmd FileType Makefile setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
+autocmd FileType make   setlocal noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
 
 "---------------------------------------------------------------------------
 " USEFUL SHORTCUTS
