@@ -26,6 +26,7 @@ set ignorecase      " Do case insensitive matching
 set hlsearch		" search highlighting
 
 set autoindent		" auto indentation
+set cindent
 set copyindent		" copy the previous indentation on autoindenting
 set smarttab		" insert tabs on the start of a line according to context
 " :set paste if having indentation problem
@@ -66,14 +67,15 @@ autocmd BufNewFile,BufRead *.scss   set ft=scss.css
 autocmd BufNewFile,BufRead *.sass   set ft=sass.css
 
 " TAB setting{
-   set expandtab        "replace <TAB> with spaces
-   set softtabstop=4
-   set shiftwidth=4
+    set expandtab        "replace <TAB> with spaces
+    set softtabstop=2
+    set shiftwidth=2
+    set linespace=2
 
-   au FileType Makefile set noexpandtab
 " }
 
-autocmd Syntax html,css,ruby,javascript,coffee set softtabstop=2 shiftwidth=2 linespace=2
+autocmd FileType python setlocal shiftwidth=4 softtabstop=4
+autocmd FileType Makefile setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
 
 "---------------------------------------------------------------------------
 " USEFUL SHORTCUTS
