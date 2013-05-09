@@ -85,9 +85,9 @@ let g:mapleader=";"
 
 " --- move around splits {
 " move to and maximize the below split
-nmap <C-J> <C-W>j
+nmap <C-j> <C-w>j
 " move to and maximize the above split
-nmap <C-K> <C-W>k
+nmap <C-k> <C-w>k
 " move to and maximize the left split
 nmap <c-h> <c-w>h
 " move to and maximize the right split
@@ -108,12 +108,12 @@ map <C-t><C-w> :tabclose<CR>
 nmap <leader>/ :nohl<CR>
 
 " Command mode
-cnoremap <C-A> <Home>
-cnoremap <C-E> <End>
-cnoremap <C-P> <Up>
-cnoremap <C-N> <Down>
-cnoremap <C-F> <Right>
-cnoremap <C-B> <left>
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <C-f> <Right>
+cnoremap <C-b> <left>
 
 nmap <leader>p :set paste!<BAR>set paste?<CR>
 
