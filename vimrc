@@ -155,7 +155,7 @@ map <leader>q :q<cr>
 set scrolloff=999
 
 
-set wrap
+set nowrap
 " set text boundary for code
 set tw=76
 set fo+=t
