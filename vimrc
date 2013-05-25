@@ -44,10 +44,10 @@ set cursorline        " highlight current line
 
 
 if has("gui_running")	" GUI color and font settings
-  set guifont=Consolas\ 16
+  set guifont=Consolas\ 13
   set background=dark
   set t_Co=256          " 256 color mode
-  colors kolor
+  colors moria
   highlight CursorLine          guibg=#003853 ctermbg=24  gui=none cterm=none
 else
 " terminal color settings
