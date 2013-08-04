@@ -168,8 +168,8 @@ set tw=72
 
 " Ultisnips youcompleteme setting
 let g:UltiSnipsExpandTrigger="<c-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-l>"
+let g:UltiSnipsJumpForwardTrigger="<c-k>"
+let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 
 """""""""""""""""""""""""""""""
 " CtrlP
