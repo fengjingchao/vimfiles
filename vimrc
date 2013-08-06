@@ -168,7 +168,7 @@ setlocal formatoptions += =aw2tq
 
 " Ultisnips youcompleteme setting
 let g:UltiSnipsExpandTrigger="<c-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-k>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-l>"
 let g:ycm_autoclose_preview_window_after_completion=1
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
