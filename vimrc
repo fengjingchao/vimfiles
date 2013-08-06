@@ -44,7 +44,7 @@ set cursorline        " highlight current line
 
 
 if has("gui_running")	" GUI color and font settings
-  set guifont=Consolas\ 14
+  set guifont=Consolas\ 15
   set background=light
   set t_Co=256          " 256 color mode
   colors peaksea
