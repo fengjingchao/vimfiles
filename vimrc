@@ -158,7 +158,8 @@ set scrolloff=999
 set nowrap
 " set text boundary for code
 set tw=72
-setlocal formatoptions += =aw2tq
+setlocal formatoptions -= t
+setlocal formatoptions += =aw2cq
 
 
 
