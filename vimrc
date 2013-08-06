@@ -158,7 +158,13 @@ set scrolloff=999
 set nowrap
 " set text boundary for code
 set tw=72
-setlocal fo=aw2cq
+" formatoptions:
+" - a : auto format
+" - c : autowrap comments using textwidth
+" - w : trailing whitespace paragraph continues
+" - 2 : second line as indent guide
+" - q : allowing formating comments with 'gq'
+set fo=aw2cq
 
 
 
