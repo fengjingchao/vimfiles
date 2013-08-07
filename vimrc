@@ -173,11 +173,12 @@ set fo=aw2cq
 " -----------------------------
 
 " Ultisnips youcompleteme setting
-let g:UltiSnipsExpandTrigger="<c-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-l>"
-let g:ycm_autoclose_preview_window_after_completion=1
-nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:UltiSnipsExpandTrigger                        = "<c-k>"
+let g:UltiSnipsJumpForwardTrigger                   = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger                  = "<c-l>"
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_complete_in_strings                       = 1
+let g:ycm_complete_in_comments                      = 1
 
 """""""""""""""""""""""""""""""
 " CtrlP
