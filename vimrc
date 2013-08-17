@@ -44,7 +44,7 @@ set cursorline        " highlight current line
 
 
 if has("gui_running")	" GUI color and font settings
-  set guifont=Consolas\ 15
+  set guifont=Consolas\ 12
   set background=light
   set t_Co=256          " 256 color mode
   colors peaksea
@@ -184,7 +184,7 @@ let g:ycm_filepath_completion_use_working_dir       = 1
 let g:ycm_min_num_of_chars_for_completion     = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
-"let g:ycm_cache_omnifunc = 1
+let g:ycm_cache_omnifunc = 1
 
 """""""""""""""""""""""""""""""
 " CtrlP
