@@ -6,7 +6,6 @@
     set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
     source ~/.vim/vim.bundles
-    filetype plugin indent on
 " }
 
 set bs=2		" allow backspacing over everything in insert mode
