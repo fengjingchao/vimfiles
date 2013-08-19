@@ -155,7 +155,6 @@ set scrolloff=999
 
 
 set nowrap
-" set text boundary for code
 set tw=72
 " formatoptions:
 " - a : auto format
