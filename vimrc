@@ -8,7 +8,7 @@
     source ~/.vim/vim.bundles
 " }
 
-set rtp+=$GOROOT/misc/vim
+"set rtp+=$GOROOT/misc/vim
 
 set bs=2		" allow backspacing over everything in insert mode
 set history=1000
