@@ -157,7 +157,7 @@ set scrolloff=999
 
 
 set nowrap
-set tw=72
+set tw=80
 " formatoptions:
 " - a : auto format
 " - c : autowrap comments using textwidth
