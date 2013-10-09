@@ -156,15 +156,15 @@ map <leader>q :q<cr>
 set scrolloff=999
 
 
-set nowrap
-set tw=80
+set wrap
+"set tw=80
 " formatoptions:
 " - a : auto format
 " - c : autowrap comments using textwidth
 " - w : trailing whitespace paragraph continues
 " - 2 : second line as indent guide
 " - q : allowing formating comments with 'gq'
-set fo=aw2cq
+"set fo=aw2cq
 
 
 " -----------------------------
