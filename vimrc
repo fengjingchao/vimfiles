@@ -42,7 +42,7 @@ set showmode		" Show current mode
 set wildchar=<TAB>	" start wild expansion in the command line using <TAB>
 set wildmenu            " wild char completion menu
 set cursorline        " highlight current line
-
+set completeopt-=preview
 
 if has("gui_running")	" GUI color and font settings
   set guifont=Consolas\ 12
