@@ -313,4 +313,4 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 " Jedi There are also some VIM options (like completeopt and key defaults)
 " which are automatically initialized, but you can change all of them:
 let g:jedi#popup_select_first = 0
-autocmd FileType python setlocal completeopt-=preview
+let g:jedi#auto_vim_configuration = 0
