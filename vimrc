@@ -52,7 +52,7 @@ if has("gui_running")	" GUI color and font settings
   set guifont=Consolas\ 12
   set background=light
   set t_Co=256          " 256 color mode
-  colors peaksea
+  colors Tomorrow-Night
   "highlight CursorLine          guibg=#A7D7BD ctermbg=24  gui=none cterm=none
 else
 " terminal color settings
