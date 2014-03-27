@@ -43,6 +43,10 @@ set wildchar=<TAB>	" start wild expansion in the command line using <TAB>
 set wildmenu            " wild char completion menu
 set cursorline        " highlight current line
 set completeopt-=preview
+"set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
 
 if has("gui_running")	" GUI color and font settings
   set guifont=Consolas\ 12
