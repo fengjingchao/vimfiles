@@ -50,15 +50,17 @@ set guioptions-=L  "remove left-hand scroll bar
 
 if has("gui_running")	" GUI color and font settings
   set guifont=Consolas\ 12
-  set background=light
   set t_Co=256          " 256 color mode
-  colors Tomorrow-Night
+  colors Tomorrow-Night-Eighties
   "highlight CursorLine          guibg=#A7D7BD ctermbg=24  gui=none cterm=none
 else
 " terminal color settings
   colors vgod
 endif
 
+" Go Setting
+au FileType go au BufWritePre <buffer> Fmt
+let g:gofmt_command = "goimports"
 
 " C/C++ specific settings
 autocmd FileType c,cpp,cc  set cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,n0,f0,{0,}0,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
