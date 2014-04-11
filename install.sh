@@ -7,3 +7,5 @@ sh $GOPATH/src/github.com/nsf/gocode/vim/update.sh
 
 # go get -u code.google.com/p/go.tools/cmd/goimports
 # go get -u github.com/nsf/gocode
+#
+# rm after/ if using ycm
