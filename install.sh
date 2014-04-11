@@ -1,5 +1,13 @@
 #!/bin/sh
 
+# Choose the option you want
+# 1. neocomplete
+# 2. youcompleteme
+#
+# Then
+# cp vim.bundle[#] vim.bundle
+# cp vimrc[#] vimrc
+
 mkdir -p ~/.vimtmp/swap
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 vim +BundleInstall +qall
