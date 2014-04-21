@@ -3,6 +3,7 @@ vimfiles
 
 Auto Formatter
 ------
-Go: gofmt
-C: astyle
-Python: autopep8
+
+- Go: gofmt
+- C: astyle
+- Python: autopep8
