@@ -10,26 +10,26 @@
 
 set rtp+=$GOROOT/misc/vim
 
-set bs=2		" allow backspacing over everything in insert mode
+set bs=2        " allow backspacing over everything in insert mode
 set history=1000
-set ruler		" show the cursor position all the time
-set autoread		" auto read when file is changed from outside
+set ruler       " show the cursor position all the time
+set autoread        " auto read when file is changed from outside
 
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
-syntax on		" syntax highlight
+syntax on       " syntax highlight
 
 " Matching
 set showmatch       " Show matching brackets.
 set smartcase       " Do smart case matching
 set incsearch       " Incremental search
 set ignorecase      " Do case insensitive matching
-set hlsearch		" search highlighting
+set hlsearch        " search highlighting
 
-set autoindent		" auto indentation
+set autoindent      " auto indentation
 set cindent
-set copyindent		" copy the previous indentation on autoindenting
-set smarttab		" insert tabs on the start of a line according to context
+set copyindent      " copy the previous indentation on autoindenting
+set smarttab        " insert tabs on the start of a line according to context
 " :set paste if having indentation problem
 set clipboard=unnamed
 
@@ -38,8 +38,8 @@ set showcmd         " Show (partial) command in status line.
 set laststatus=2    " Always show status bar
 set ruler           " Show cursor position
 set number          " Show line number
-set showmode		" Show current mode
-set wildchar=<TAB>	" start wild expansion in the command line using <TAB>
+set showmode        " Show current mode
+set wildchar=<TAB>  " start wild expansion in the command line using <TAB>
 set wildmenu            " wild char completion menu
 set cursorline        " highlight current line
 set completeopt-=preview
@@ -48,10 +48,10 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
-if has("gui_running")	" GUI color and font settings
+if has("gui_running")   " GUI color and font settings
   set guifont=Consolas\ 12
   set t_Co=256          " 256 color mode
-  colors Tomorrow-Night-Eighties
+  colors freya
   set bg=dark
   "highlight CursorLine          guibg=#A7D7BD ctermbg=24  gui=none cterm=none
 else
@@ -74,15 +74,21 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 autocmd BufNewFile,BufRead *.scss   set ft=scss.css
 autocmd BufNewFile,BufRead *.sass   set ft=sass.css
 
-" TAB setting{
-    set expandtab        "replace <TAB> with spaces
-    set softtabstop=2
-    set shiftwidth=2
-    set linespace=2
-" }
+" use 4 spaces for tabs
+set tabstop=4 softtabstop=4 shiftwidth=4
 
-autocmd FileType python setlocal shiftwidth=4 softtabstop=4
-autocmd FileType make   setlocal noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
+" display indentation guides
+"set list listchars=tab:❘\ ,trail:·,extends:»,precedes:«,nbsp:×
+set list listchars=tab:→\ ,trail:·,extends:»,precedes:«,nbsp:×
+
+" convert spaces to tabs when reading file
+autocmd! bufreadpost * set noexpandtab | retab! 4
+
+" convert tabs to spaces before writing file
+autocmd! bufwritepre * set expandtab | retab! 4
+
+" convert spaces to tabs after writing file (to show guides again)
+autocmd! bufwritepost * set noexpandtab | retab! 4
 
 "---------------------------------------------------------------------------
 " USEFUL SHORTCUTS
@@ -108,9 +114,7 @@ map <S-H> gT
 map <S-L> gt
 
 " new tab
-map <C-t><C-t> :tabnew<CR>
-" close tab
-map <C-t><C-w> :tabclose<CR>
+map <C-w>o :tabnew<CR>
 
 " ,/ turn off search highlighting
 nmap <leader>/ :nohl<CR>
@@ -199,9 +203,6 @@ let g:ctrlp_max_height = 20
 let NERDChristmasTree=1
 let NERDTreeWinSize=25
 nmap <F8> :NERDTreeToggle<cr>
-
-" Tagbar
-nmap <F7> :TagbarToggle<CR>
 
 " Vim session
 let g:session_autosave='no'
