@@ -10,26 +10,26 @@
 
 set rtp+=$GOROOT/misc/vim
 
-set bs=2		" allow backspacing over everything in insert mode
+set bs=2        " allow backspacing over everything in insert mode
 set history=1000
-set ruler		" show the cursor position all the time
-set autoread		" auto read when file is changed from outside
+set ruler       " show the cursor position all the time
+set autoread        " auto read when file is changed from outside
 
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
-syntax on		" syntax highlight
+syntax on       " syntax highlight
 
 " Matching
 set showmatch       " Show matching brackets.
 set smartcase       " Do smart case matching
 set incsearch       " Incremental search
 set ignorecase      " Do case insensitive matching
-set hlsearch		" search highlighting
+set hlsearch        " search highlighting
 
-set autoindent		" auto indentation
+set autoindent      " auto indentation
 set cindent
-set copyindent		" copy the previous indentation on autoindenting
-set smarttab		" insert tabs on the start of a line according to context
+set copyindent      " copy the previous indentation on autoindenting
+set smarttab        " insert tabs on the start of a line according to context
 " :set paste if having indentation problem
 set clipboard=unnamed
 
@@ -38,8 +38,8 @@ set showcmd         " Show (partial) command in status line.
 set laststatus=2    " Always show status bar
 set ruler           " Show cursor position
 set number          " Show line number
-set showmode		" Show current mode
-set wildchar=<TAB>	" start wild expansion in the command line using <TAB>
+set showmode        " Show current mode
+set wildchar=<TAB>  " start wild expansion in the command line using <TAB>
 set wildmenu            " wild char completion menu
 set cursorline        " highlight current line
 set completeopt-=preview
@@ -48,7 +48,7 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
-if has("gui_running")	" GUI color and font settings
+if has("gui_running")   " GUI color and font settings
   set guifont=Consolas\ 12
   set t_Co=256          " 256 color mode
   colors freya
@@ -115,7 +115,7 @@ map <S-H> gT
 map <S-L> gt
 
 " new tab
-map <C-w>o :tabnew<CR>
+map <C-o> :tabnew<CR>:CtrlP<CR>
 
 " ,/ turn off search highlighting
 nmap <leader>/ :nohl<CR>
