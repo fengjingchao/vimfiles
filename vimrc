@@ -76,7 +76,7 @@ autocmd BufNewFile,BufRead *.scss   set ft=scss.css
 autocmd BufNewFile,BufRead *.sass   set ft=sass.css
 
 " use 4 spaces for tabs
-set tabstop=4 softtabstop=4 shiftwidth=4
+set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 
 " display indentation guides
 "set list listchars=tab:❘\ ,trail:·,extends:»,precedes:«,nbsp:×
