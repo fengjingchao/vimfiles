@@ -1,11 +1,11 @@
 " Use Vundle to manage plugins {
-    set nocompatible
+  set nocompatible
 
-    filetype off
+  filetype off
 
-    set rtp+=~/.vim/bundle/vundle/
-    call vundle#rc()
-    source ~/.vim/vim.bundles
+  set rtp+=~/.vim/bundle/vundle/
+  call vundle#rc()
+  source ~/.vim/vim.bundles
 " }
 
 set rtp+=$GOROOT/misc/vim
@@ -15,6 +15,7 @@ set history=1000
 set ruler       " show the cursor position all the time
 set autoread        " auto read when file is changed from outside
 
+filetype on
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 syntax on       " syntax highlight
@@ -75,8 +76,13 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 autocmd BufNewFile,BufRead *.scss   set ft=scss.css
 autocmd BufNewFile,BufRead *.sass   set ft=sass.css
 
-" use 4 spaces for tabs
-set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+" TAB setting {
+  set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+" }
+
+" specific file types tab setting
+au FileType go,Makefile set noexpandtab
+au FileType python,html,xml,ruby,javascript,vim,sh set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " display indentation guides
 "set list listchars=tab:❘\ ,trail:·,extends:»,precedes:«,nbsp:×
