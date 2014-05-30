@@ -195,6 +195,7 @@ set wrap
 nmap <leader>f :CtrlPMixed<cr>
 nmap <leader>bf :CtrlPBuffer<cr>
 nmap <leader>r :CtrlPMRU<cr>
+nmap <leader>. :CtrlPTag<cr>
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
