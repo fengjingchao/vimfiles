@@ -100,7 +100,7 @@ set list listchars=tab:→\ ,trail:·,extends:»,precedes:«,nbsp:×
 "---------------------------------------------------------------------------
 " USEFUL SHORTCUTS
 "---------------------------------------------------------------------------
-" set leader to ,
+" set leader to ;
 let mapleader=";"
 let g:mapleader=";"
 
@@ -134,6 +134,7 @@ cnoremap <C-n> <Down>
 cnoremap <C-f> <Right>
 cnoremap <C-b> <left>
 
+" Toggle pastemode
 nmap <leader>p :set paste!<BAR>set paste?<CR>
 
 " allow multiple indentation/deindentation in visual mode
@@ -169,7 +170,7 @@ nmap <BS> i<BS>
 imap <C-d> <Del>
 imap <c-s> <esc>:w<cr>a
 map <c-s> :w<cr>
-map <Leader>m :w<cr>
+map <Leader>w :w<cr>
 map <leader>q :q<cr>
 set scrolloff=999
 
@@ -194,7 +195,7 @@ set wrap
 """""""""""""""""""""""""""""""
 nmap <leader>f :CtrlPMixed<cr>
 nmap <leader>bf :CtrlPBuffer<cr>
-nmap <leader>r :CtrlPMRU<cr>
+nmap <leader>mr :CtrlPMRU<cr>
 nmap <leader>. :CtrlPTag<cr>
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
@@ -210,7 +211,7 @@ let g:ctrlp_max_height = 20
 " Nerd Tree
 let NERDChristmasTree=1
 let NERDTreeWinSize=25
-nmap <F8> :NERDTreeToggle<cr>
+nmap <leader>nd :NERDTreeToggle<cr>
 
 " Vim session
 let g:session_autosave='no'
