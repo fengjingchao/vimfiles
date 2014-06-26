@@ -8,7 +8,13 @@
   source ~/.vim/vim.bundles
 " }
 
-set rtp+=$GOROOT/misc/vim
+if filereadable("$GOROOT/misc/vim/readme.txt")
+  set rtp+=$GOROOT/misc/vim
+else
+  if filereadable("/usr/local/go/misc/vim/readme.txt")
+    set rtp+=/usr/local/go/misc/vim
+  endif
+endif
 
 set bs=2        " allow backspacing over everything in insert mode
 set history=1000
@@ -50,11 +56,11 @@ set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
 if has("gui_running")   " GUI color and font settings
-  set guifont=Consolas\ 12
+  set guifont=Monaco:h12
   set t_Co=256          " 256 color mode
   colors freya
-  set bg=light "magic
-  set bg=dark
+"  set bg=light "magic
+"  set bg=dark
   "highlight CursorLine          guibg=#A7D7BD ctermbg=24  gui=none cterm=none
 else
 " terminal color settings
