@@ -8,14 +8,6 @@
   source ~/.vim/vim.bundles
 " }
 
-if filereadable("$GOROOT/misc/vim/readme.txt")
-  set rtp+=$GOROOT/misc/vim
-else
-  if filereadable("/usr/local/go/misc/vim/readme.txt")
-    set rtp+=/usr/local/go/misc/vim
-  endif
-endif
-
 set bs=2        " allow backspacing over everything in insert mode
 set history=1000
 set ruler       " show the cursor position all the time
@@ -66,10 +58,6 @@ else
 " terminal color settings
   colors vgod
 endif
-
-" Go Setting
-au FileType go au BufWritePre <buffer> Fmt
-let g:gofmt_command = "goimports"
 
 " C/C++ specific settings
 autocmd FileType c,cpp,cc  set cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,n0,f0,{0,}0,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
@@ -151,7 +139,7 @@ vnoremap > >gv
 cmap cd. lcd %:p:h
 
 " Header guard: very useful for C
-map <leader>gd :call IncludeGuard()<CR>
+map <leader>cg :call IncludeGuard()<CR>
 fun! IncludeGuard()
    let basename = substitute(bufname(""), '.*/', '', '')
    let guard = '_' . substitute(toupper(basename), '\.', '_', "H")
@@ -233,3 +221,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 " Jedi There are also some VIM options (like completeopt and key defaults)
 " which are automatically initialized, but you can change all of them:
 let g:jedi#popup_select_first = 0
+
+" Go Development
+au Filetype go nnoremap <leader>v :vsp <CR>:exe "GoDef" <CR>
+au Filetype go nnoremap <leader>s :sp <CR>:exe "GoDef"<CR>
+au Filetype go nnoremap <leader>t :tab split <CR>:exe "GoDef"<CR>
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au Filetype go nnoremap <leader>r :GoRun %<CR>

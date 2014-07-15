@@ -30,7 +30,7 @@ Default `<leader>` is `";"`
 * `<C-o>` : open new tab and also CtrlP to find file
 * `<leader>/` : turn off search highlight
 * `<leader>p` : toggle paste mode
-* `<leader>gd` : header guard. Useful function for C header file.
+* `<leader>cg` : header guard. Useful function for C header file.
 * `<C-a>` : `<Home>`
 * `<C-e>` : `<End>`
 
@@ -42,7 +42,13 @@ Default `<leader>` is `";"`
         map <Leader>w :w<cr>
         map <leader>q :q<cr>
 
-
+### Go development
+* `<leader>v` : open GoDef
+* `<leader>s`
+* `<leader>t`
+* `<leader>gd` : open GoDoc
+* `<leader>gv`
+* `<leader>r` : go run
 
 ### Command Mode
 * `<C-a>` `<Home>`
