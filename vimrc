@@ -207,6 +207,9 @@ let NERDChristmasTree=1
 let NERDTreeWinSize=25
 nmap <leader>nd :NERDTreeToggle<cr>
 
+"TagBar
+nmap <leader>tb: :TagBar<cr>
+
 " Vim session
 let g:session_autosave='no'
 let g:session_autoload='no'

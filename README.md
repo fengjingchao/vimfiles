@@ -21,8 +21,9 @@ Default `<leader>` is `";"`
 * `<leader>mr` : CtrlP MRU (Most Recently Used)
 * `<leader>.` : CtrlP Tag (In combination use with **CTags**)
 
-### NerdTree
+### NerdTree, TagBar
 * `<leader>nd` : Toggle NerdTree
+* `<leader>tb` : Toggle TagBar
 
 ### Common
 * `<C-j/k/h/l>` : move around window splits
