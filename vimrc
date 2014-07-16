@@ -60,23 +60,23 @@ else
 endif
 
 " C/C++ specific settings
-autocmd FileType c,cpp,cc  set cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,n0,f0,{0,}0,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
+autocmd FileType c,cpp,cc  setlocal cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,n0,f0,{0,}0,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
 
 "Restore cursor to file position in previous editing session
 set viminfo='10,\"100,:20,%,n~/.viminfo
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 " make CSS omnicompletion work for SASS and SCSS
-autocmd BufNewFile,BufRead *.scss   set ft=scss.css
-autocmd BufNewFile,BufRead *.sass   set ft=sass.css
+autocmd BufNewFile,BufRead *.scss   setlocal ft=scss.css
+autocmd BufNewFile,BufRead *.sass   setlocal ft=sass.css
 
 " TAB setting {
   set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 " }
 
 " specific file types tab setting
-au FileType go,Makefile set noexpandtab
-au FileType python,html,xml,ruby,javascript,vim,sh set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+au FileType go,Makefile setlocal noexpandtab
+au FileType python,html,xml,ruby,javascript,vim,sh setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " display indentation guides
 "set list listchars=tab:❘\ ,trail:·,extends:»,precedes:«,nbsp:×
@@ -226,9 +226,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:jedi#popup_select_first = 0
 
 " Go Development
-au Filetype go nnoremap <leader>v :vsp <CR>:exe "GoDef" <CR>
-au Filetype go nnoremap <leader>s :sp <CR>:exe "GoDef"<CR>
-au Filetype go nnoremap <leader>t :tab split <CR>:exe "GoDef"<CR>
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au Filetype go nnoremap <leader>r :GoRun %<CR>
+au Filetype go nnoremap <leader>v  :vsp <CR>:exe "GoDef" <CR>
+au Filetype go nnoremap <leader>s  :sp <CR>:exe "GoDef"<CR>
+au Filetype go nnoremap <leader>t  :tab split <CR>:exe "GoDef"<CR>
+au FileType go nmap     <Leader>gd  <Plug>(go-doc)
+au FileType go nmap     <Leader>gv  <Plug>(go-doc-vertical)
+au Filetype go nnoremap <leader>r  :GoRun %<CR>
