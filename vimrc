@@ -115,7 +115,7 @@ map <S-H> gT
 map <S-L> gt
 
 " new tab
-map <C-o> :tabnew<CR>:CtrlP<CR>
+map <C-o> :tabnew<CR>:CtrlPBuffer<CR>
 
 " ,/ turn off search highlighting
 nmap <leader>/ :nohl<CR>
