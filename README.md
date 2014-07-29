@@ -23,7 +23,8 @@ Default `<leader>` is `";"`
 
 ### NerdTree, TagBar
 * `<leader>nd` : Toggle NerdTree
-* `<leader>tb` : Toggle TagBar
+* `<F7>` : Toggle NerdTree
+* `<F8>` : Toggle TagBar
 
 ### Common
 * `<C-j/k/h/l>` : move around window splits
@@ -31,7 +32,6 @@ Default `<leader>` is `";"`
 * `<C-o>` : open new tab and also CtrlP to find file
 * `<leader>/` : turn off search highlight
 * `<leader>p` : toggle paste mode
-* `<leader>cg` : header guard. Useful function for C header file.
 * `<C-a>` : `<Home>`
 * `<C-e>` : `<End>`
 

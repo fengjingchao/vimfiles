@@ -138,17 +138,6 @@ vnoremap > >gv
 " :cd. change working directory to that of the current file
 cmap cd. lcd %:p:h
 
-" Header guard: very useful for C
-map <leader>cg :call IncludeGuard()<CR>
-fun! IncludeGuard()
-   let basename = substitute(bufname(""), '.*/', '', '')
-   let guard = '_' . substitute(toupper(basename), '\.', '_', "H")
-   call append(0, "#ifndef " . guard)
-   call append(1, "#define " . guard)
-   call append( line("$"), "#endif // for #ifndef " . guard)
-endfun
-
-
 " create .vimtmp in home directory
 set backupdir=./.backup,~/.vimtmp,/tmp
 set directory=./.backup,~/.vimtmp,/tmp
@@ -205,10 +194,11 @@ let g:ctrlp_max_height = 20
 " Nerd Tree
 let NERDChristmasTree=1
 let NERDTreeWinSize=25
+nmap <F7> :NERDTreeToggle<cr>
 nmap <leader>nd :NERDTreeToggle<cr>
 
 "TagBar
-nmap <leader>tb :Tagbar<cr>
+nmap <F8> :Tagbar<cr>
 
 " Vim session
 let g:session_autosave='no'
