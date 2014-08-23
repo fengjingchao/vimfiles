@@ -197,8 +197,11 @@ let NERDTreeWinSize=25
 nmap <F7> :NERDTreeToggle<cr>
 nmap <leader>nd :NERDTreeToggle<cr>
 
-"TagBar
+" TagBar
 nmap <F8> :Tagbar<cr>
+
+" Syntastic
+nmap <leader>st :SyntasticToggle<cr>
 
 " Vim session
 let g:session_autosave='no'
