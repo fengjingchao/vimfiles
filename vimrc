@@ -115,7 +115,7 @@ map <S-H> gT
 map <S-L> gt
 
 " new tab
-map <C-o> :tabnew<CR>:CtrlPBuffer<CR>
+map <C-o> :tabnew<CR>:NERDTree<CR><c-w>l
 
 " ,/ turn off search highlighting
 nmap <leader>/ :nohl<CR>
