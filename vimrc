@@ -155,7 +155,7 @@ imap <c-s> <esc>:w<cr>a
 map <c-s> :w<cr>
 map <Leader>w :w<cr>
 map <leader>q :q<cr>
-set scrolloff=999
+" set scrolloff=999
 
 
 set wrap
@@ -219,6 +219,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:jedi#popup_select_first = 0
 
 " Go Development
+let g:go_fmt_fail_silently = 1
+let g:go_fmt_command = "goimports"
 au Filetype go nnoremap <leader>v  :vsp <CR>:exe "GoDef" <CR>
 au Filetype go nnoremap <leader>s  :sp <CR>:exe "GoDef"<CR>
 au Filetype go nnoremap <leader>t  :tab split <CR>:exe "GoDef"<CR>
