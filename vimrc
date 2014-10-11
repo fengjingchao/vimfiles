@@ -48,7 +48,7 @@ set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
 if has("gui_running")   " GUI color and font settings
-  set guifont=Monaco:h12
+  set guifont=Monaco:h13
   set t_Co=256          " 256 color mode
   colors moria
 "  set bg=light "magic
@@ -58,6 +58,12 @@ else
 " terminal color settings
   colors vgod
 endif
+
+" auto reload vimrc
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
 
 " C/C++ specific settings
 autocmd FileType c,cpp,cc  setlocal cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,n0,f0,{0,}0,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
@@ -76,7 +82,7 @@ autocmd BufNewFile,BufRead *.sass   setlocal ft=sass.css
 
 " specific file types tab setting
 au FileType go,Makefile setlocal noexpandtab
-au FileType python,html,xml,ruby,javascript,vim,sh setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+au FileType clojure,python,html,xml,ruby,javascript,vim,sh setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " display indentation guides
 "set list listchars=tab:❘\ ,trail:·,extends:»,precedes:«,nbsp:×
@@ -113,9 +119,6 @@ nmap <c-l> <c-w>l
 map <S-H> gT
 " go to next tab
 map <S-L> gt
-
-" new tab
-map <C-o> :NERDTreeToggle<CR>
 
 " ,/ turn off search highlighting
 nmap <leader>/ :nohl<CR>
@@ -199,7 +202,7 @@ let g:ctrlp_max_height = 20
 let NERDChristmasTree=1
 let NERDTreeWinSize=25
 nmap <F7> :NERDTreeToggle<cr>
-"nmap <leader>nd :NERDTreeToggle<cr>
+map <leader>1 :NERDTreeToggle<CR>
 
 " TagBar
 nmap <F8> :Tagbar<cr>
