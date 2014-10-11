@@ -217,6 +217,7 @@ let g:ycm_seed_identifiers_with_syntax = 1
 let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-k>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:ycm_global_ycm_extra_conf = '/Users/hdeng/Dropbox/code/c/ycm_extra_conf.py'
 
 " Jedi There are also some VIM options (like completeopt and key defaults)
 " which are automatically initialized, but you can change all of them:
