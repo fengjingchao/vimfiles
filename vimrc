@@ -50,9 +50,9 @@ set guioptions-=L  "remove left-hand scroll bar
 if has("gui_running")   " GUI color and font settings
   set guifont=Monaco:h12
   set t_Co=256          " 256 color mode
-  colors freya
+  colors moria
 "  set bg=light "magic
-"  set bg=dark
+  set bg=dark
   "highlight CursorLine          guibg=#A7D7BD ctermbg=24  gui=none cterm=none
 else
 " terminal color settings
@@ -115,7 +115,7 @@ map <S-H> gT
 map <S-L> gt
 
 " new tab
-map <C-o> :tabnew<CR>:NERDTree<CR><c-w>l
+map <C-o> :NERDTreeToggle<CR>
 
 " ,/ turn off search highlighting
 nmap <leader>/ :nohl<CR>
@@ -181,11 +181,15 @@ nmap <leader>bf :CtrlPBuffer<cr>
 nmap <leader>mr :CtrlPMRU<cr>
 nmap <leader>. :CtrlPTag<cr>
 
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|o|a|swp|so|dll)$',
+  \ 'file': '\v\.(exe|so|dll)$',
   \ }
 let g:ctrlp_user_command = 'find %s -type f'
 let g:ctrlp_max_height = 20
@@ -195,7 +199,7 @@ let g:ctrlp_max_height = 20
 let NERDChristmasTree=1
 let NERDTreeWinSize=25
 nmap <F7> :NERDTreeToggle<cr>
-nmap <leader>nd :NERDTreeToggle<cr>
+"nmap <leader>nd :NERDTreeToggle<cr>
 
 " TagBar
 nmap <F8> :Tagbar<cr>

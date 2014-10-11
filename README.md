@@ -22,7 +22,7 @@ Default `<leader>` is `";"`
 * `<leader>.` : CtrlP Tag (In combination use with **CTags**)
 
 ### NerdTree, TagBar, Syntastic
-* `<leader>nd` : Toggle NerdTree
+* `<c-o>` : Toggle NerdTree
 * `<F7>` : Toggle NerdTree
 * `<F8>` : Toggle TagBar
 * `<leader>st` : Toggle Syntastic
