@@ -36,7 +36,7 @@ set clipboard=unnamed
 set showcmd         " Show (partial) command in status line.
 set laststatus=2    " Always show status bar
 set ruler           " Show cursor position
-set number          " Show line number
+set nonumber          " Show line number
 set showmode        " Show current mode
 set wildchar=<TAB>  " start wild expansion in the command line using <TAB>
 set wildmenu            " wild char completion menu
@@ -49,13 +49,12 @@ set guioptions-=L  "remove left-hand scroll bar
 
 if has("gui_running")   " GUI color and font settings
   set guifont=Monaco:h13
-  set t_Co=256          " 256 color mode
-  colors moria
-"  set bg=light "magic
-  set bg=dark
+  "colors moria
+  colors solarized
+  set bg=light
+  "set bg=dark
   "highlight CursorLine          guibg=#A7D7BD ctermbg=24  gui=none cterm=none
-else
-" terminal color settings
+else " terminal color settings
   colors vgod
 endif
 
