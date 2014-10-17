@@ -44,14 +44,6 @@ Default `<leader>` is `";"`
         map <Leader>w :w<cr>
         map <leader>q :q<cr>
 
-### Go development
-* `<leader>v` : open GoDef
-* `<leader>s`
-* `<leader>t`
-* `<leader>gd` : open GoDoc
-* `<leader>gv`
-* `<leader>r` : go run
-
 ### Command Mode
 * `<C-a>` `<Home>`
 * `<C-e>` `<End>`
@@ -60,4 +52,72 @@ Default `<leader>` is `";"`
 * `<C-f>` `<Right>`
 * `<C-b>` `<left>`
 * `cd.` : change to current directory
+
+### Golang IDE
+vim-go has several `<Plug>` mappings which can be used to create custom
+mappings. Below are some examples you might find useful:
+
+Show a list of interfaces which is implemented by the type under your cursor
+with `<leader>s` 
+
+```vim
+au FileType go nmap <Leader>s <Plug>(go-implements)
+```
+
+Show type info for the word under your cursor with `<leader>i` (useful if you
+have disabled auto showing type info via `g:go_auto_type_info`)
+
+```vim
+au FileType go nmap <Leader>i <Plug>(go-info)
+```
+
+Open the relevant Godoc for the word under the cursor with `<leader>gd` or open
+it vertically with `<leader>gv`
+
+```vim
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+```
+
+Or open the Godoc in browser
+
+```vim
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+```
+
+Run commands, such as  `go run` with `<leader>r` for the current file or `go
+build` and `go test` for the current package with `<leader>b` and `<leader>t`.
+Display a beautiful annotated source code to see which functions are covered
+with `<leader>c`.
+
+```vim
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+```
+
+Replace `gd` (Goto Declaration) for the word under your cursor (replaces current buffer):
+
+```vim
+au FileType go nmap gd <Plug>(go-def)
+```
+
+Or open the definition/declaration in a new vertical, horizontal or tab for the
+word under your cursor:
+
+```vim
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+```
+Rename the identifier under the cursor to a new name
+
+```vim
+au FileType go nmap <Leader>e <Plug>(go-rename)
+```
+
+More `<Plug>` mappings can be seen with `:he go-mappings`. Also these are just
+recommendations, you are free to create more advanced mappings or functions
+based on `:he go-commands`.
 
