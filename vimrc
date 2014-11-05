@@ -44,7 +44,7 @@ set cursorline        " highlight current line
 set completeopt-=preview
 "set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
-set guioptions-=r  "remove right-hand scroll bar
+"set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
 if has("gui_running")   " GUI color and font settings
@@ -105,19 +105,19 @@ let g:mapleader=";"
 
 " --- move around splits {
 " move to and maximize the below split
-nmap <C-j> <C-w>j
+"nmap <C-j> <C-w>j
 " move to and maximize the above split
-nmap <C-k> <C-w>k
+"nmap <C-k> <C-w>k
 " move to and maximize the left split
-nmap <c-h> <c-w>h
+"nmap <c-h> <c-w>h
 " move to and maximize the right split
-nmap <c-l> <c-w>l
+"nmap <c-l> <c-w>l
 " }
 
 " go to prev tab
-map <S-H> gT
+map <C-H> gT
 " go to next tab
-map <S-L> gt
+map <C-L> gt
 
 " ,/ turn off search highlighting
 nmap <leader>/ :nohl<CR>
@@ -146,6 +146,7 @@ set directory=./.backup,~/.vimtmp,/tmp
 
 nmap <c-a> <Home>
 nmap <c-e> <End>
+nmap <c-k> c$
 
 " open each buffer in its own tabpage
 " use 'gvim -p *' or ':tab sball'
@@ -189,11 +190,20 @@ let g:ctrlp_working_path_mode = 'ra'
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
+if exists("g:ctrlp_user_command")
+  unlet g:ctrlp_user_command
+endif
+let g:ctrlp_user_command = {
+    \ 'types': {
+        \ 1: ['.git', 'cd %s && git ls-files'],
+        \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+        \ },
+    \ 'fallback': 'find %s -type f'
+    \ }
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
-let g:ctrlp_user_command = 'find %s -type f'
 let g:ctrlp_max_height = 20
 
 
@@ -208,10 +218,6 @@ nmap <F8> :Tagbar<cr>
 
 " Syntastic
 nmap <leader>st :SyntasticToggle<cr>
-
-" Vim session
-let g:session_autosave='no'
-let g:session_autoload='no'
 
 " youcompleteme
 let g:ycm_min_num_of_chars_for_completion = 1
