@@ -18,6 +18,9 @@ filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 syntax on       " syntax highlight
 
+" working directory is always the same as the file you are editing
+set autochdir
+
 " Matching
 set showmatch       " Show matching brackets.
 set smartcase       " Do smart case matching
@@ -146,7 +149,7 @@ set directory=./.backup,~/.vimtmp,/tmp
 
 nmap <c-a> <Home>
 nmap <c-e> <End>
-nmap <c-k> c$
+nmap <c-k> k
 
 " open each buffer in its own tabpage
 " use 'gvim -p *' or ':tab sball'
