@@ -30,7 +30,6 @@ Default `<leader>` is `";"`
 ### Common
 * `<C-j/k/h/l>` : move around window splits
 * `<S-H/L>` : move around tabs
-* `<C-o>` : open new tab and also CtrlP to find file
 * `<leader>/` : turn off search highlight
 * `<leader>p` : toggle paste mode
 * `<C-a>` : `<Home>`
