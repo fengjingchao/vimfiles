@@ -42,7 +42,7 @@ set smarttab        " insert tabs on the start of a line according to context
 set showcmd         " Show (partial) command in status line.
 set laststatus=2    " Always show status bar
 set ruler           " Show cursor position
-set nonumber          " Show line number
+set number          " Show line number
 
 set showmode        " Show current mode
 set wildchar=<TAB>  " start wild expansion in the command line using <TAB>
@@ -144,6 +144,8 @@ map <leader>q :q<cr>
 
 
 set nowrap
+
+set tags=./.tags
 
 " -----------------------------
 "  PLUGIN SETTINGS
