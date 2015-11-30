@@ -62,8 +62,10 @@ set list listchars=tab:\ \ ,trail:·,extends:»,precedes:«,nbsp:×
 
 if has("gui_running")   " GUI color and font settings
   set guifont=Monaco:h14
-  colors solarized
-  set bg=light
+  "colors solarized
+  "set bg=light
+  colors onedark
+  set bg=dark
   "highlight CursorLine          guibg=#A7D7BD ctermbg=24  gui=none cterm=none
 else " terminal color settings
   colors vgod
