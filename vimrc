@@ -1,25 +1,27 @@
-" Use Vundle to manage plugins {
-  set nocompatible
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-  filetype off
 
-  set rtp+=~/.vim/bundle/vundle/
-  call vundle#rc()
-  source ~/.vim/vim.bundles
-" }
+" Use Vundle to manage plugins
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+source ~/.vim/vim.bundles
+call vundle#end()
 
+filetype plugin indent on
+
+" More powerful backspacing
+set backspace=indent,eol,start
+
+syntax on
 set bs=2        " allow backspacing over everything in insert mode
 set history=1000
-set ruler       " show the cursor position all the time
 set autoread        " auto read when file is changed from outside
 
-filetype on
-filetype indent on    " Enable filetype-specific indenting
-filetype plugin on    " Enable filetype-specific plugins
-syntax on       " syntax highlight
-
-" working directory is always the same as the file you are editing
-set autochdir
+" Optimize scrolling
+set ttyfast
+set ttyscroll=3
+set lazyredraw
 
 " Matching
 set showmatch       " Show matching brackets.
@@ -33,29 +35,35 @@ set cindent
 set copyindent      " copy the previous indentation on autoindenting
 set smarttab        " insert tabs on the start of a line according to context
 " :set paste if having indentation problem
-set clipboard=unnamed
+
+" set clipboard=unnamed
 
 " Status
 set showcmd         " Show (partial) command in status line.
 set laststatus=2    " Always show status bar
 set ruler           " Show cursor position
 set nonumber          " Show line number
+
 set showmode        " Show current mode
 set wildchar=<TAB>  " start wild expansion in the command line using <TAB>
 set wildmenu            " wild char completion menu
 set cursorline        " highlight current line
 set completeopt-=preview
+
 "set guioptions-=m  "remove menu bar
-set guioptions-=T  "remove toolbar
+"set guioptions-=T  "remove toolbar
 "set guioptions-=r  "remove right-hand scroll bar
-set guioptions-=L  "remove left-hand scroll bar
+"set guioptions-=L  "remove left-hand scroll bar
+
+" display indentation guides
+"set list listchars=tab:→\ ,trail:·,extends:»,precedes:«,nbsp:×
+set list listchars=tab:\ \ ,trail:·,extends:»,precedes:«,nbsp:×
+
 
 if has("gui_running")   " GUI color and font settings
-  set guifont=Monaco:h13
-  "colors moria
+  set guifont=Monaco:h14
   colors solarized
   set bg=light
-  "set bg=dark
   "highlight CursorLine          guibg=#A7D7BD ctermbg=24  gui=none cterm=none
 else " terminal color settings
   colors vgod
@@ -74,30 +82,12 @@ autocmd FileType c,cpp,cc  setlocal cindent comments=sr:/*,mb:*,el:*/,:// cino=>
 set viminfo='10,\"100,:20,%,n~/.viminfo
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
-" make CSS omnicompletion work for SASS and SCSS
-autocmd BufNewFile,BufRead *.scss   setlocal ft=scss.css
-autocmd BufNewFile,BufRead *.sass   setlocal ft=sass.css
-
-" TAB setting {
-  set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-" }
+" TAB setting
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " specific file types tab setting
 au FileType go,Makefile setlocal noexpandtab
-au FileType clojure,python,html,xml,ruby,javascript,vim,sh setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
-" display indentation guides
-"set list listchars=tab:❘\ ,trail:·,extends:»,precedes:«,nbsp:×
-set list listchars=tab:→\ ,trail:·,extends:»,precedes:«,nbsp:×
-
-" convert spaces to tabs when reading file
-"autocmd! bufreadpost * set noexpandtab | retab! 4
-
-" convert tabs to spaces before writing file
-"autocmd! bufwritepre * set expandtab | retab! 4
-
-" convert spaces to tabs after writing file (to show guides again)
-"autocmd! bufwritepost * set noexpandtab | retab! 4
 
 "---------------------------------------------------------------------------
 " USEFUL SHORTCUTS
@@ -105,17 +95,6 @@ set list listchars=tab:→\ ,trail:·,extends:»,precedes:«,nbsp:×
 " set leader to ;
 let mapleader=";"
 let g:mapleader=";"
-
-" --- move around splits {
-" move to and maximize the below split
-"nmap <C-j> <C-w>j
-" move to and maximize the above split
-"nmap <C-k> <C-w>k
-" move to and maximize the left split
-"nmap <c-h> <c-w>h
-" move to and maximize the right split
-"nmap <c-l> <c-w>l
-" }
 
 " go to prev tab
 map <C-H> gT
@@ -149,7 +128,6 @@ set directory=./.backup,~/.vimtmp,/tmp
 
 nmap <c-a> <Home>
 nmap <c-e> <End>
-nmap <c-k> k
 
 " open each buffer in its own tabpage
 " use 'gvim -p *' or ':tab sball'
@@ -161,19 +139,9 @@ imap <c-s> <esc>:w<cr>a
 map <c-s> :w<cr>
 map <Leader>w :w<cr>
 map <leader>q :q<cr>
-" set scrolloff=999
 
 
-set wrap
-"set tw=80
-" formatoptions:
-" - a : auto format
-" - c : autowrap comments using textwidth
-" - w : trailing whitespace paragraph continues
-" - 2 : second line as indent guide
-" - q : allowing formating comments with 'gq'
-"set fo=aw2cq
-
+set nowrap
 
 " -----------------------------
 "  PLUGIN SETTINGS
@@ -204,7 +172,7 @@ let g:ctrlp_user_command = {
     \ 'fallback': 'find %s -type f'
     \ }
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'dir':  '\v[\/]\.(git|hg|svn|)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
 let g:ctrlp_max_height = 20
@@ -228,20 +196,14 @@ let g:ycm_seed_identifiers_with_syntax = 1
 let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-k>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-let g:ycm_global_ycm_extra_conf = '/Users/hdeng/Dropbox/code/c/ycm_extra_conf.py'
 
 " Jedi There are also some VIM options (like completeopt and key defaults)
 " which are automatically initialized, but you can change all of them:
 let g:jedi#popup_select_first = 0
 
-" Go Development
+" Golang
 let g:go_fmt_fail_silently = 1
 let g:go_fmt_command = "goimports"
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
@@ -250,4 +212,15 @@ au FileType go nmap gd <Plug>(go-def)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
