@@ -159,18 +159,18 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.*,_*
 
-if exists("g:ctrlp_user_command")
-  unlet g:ctrlp_user_command
-endif
-let g:ctrlp_user_command = {
-    \ 'types': {
-        \ 1: ['.git', 'cd %s && git ls-files'],
-        \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-        \ },
-    \ 'fallback': 'find %s -type f'
-    \ }
+"if exists("g:ctrlp_user_command")
+  "unlet g:ctrlp_user_command
+"endif
+"let g:ctrlp_user_command = {
+    "\ 'types': {
+        "\ 1: ['.git', 'cd %s && git ls-files'],
+        "\ 2: ['.hg', 'hg --cwd %s locate -I .'],
+        "\ },
+    "\ 'fallback': 'find %s -type f'
+    "\ }
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|)$',
   \ 'file': '\v\.(exe|so|dll)$',
