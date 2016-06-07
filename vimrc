@@ -23,6 +23,8 @@ set ttyfast
 set ttyscroll=3
 set lazyredraw
 
+set autochdir
+
 " Matching
 set showmatch       " Show matching brackets.
 set smartcase       " Do smart case matching
@@ -56,8 +58,8 @@ set completeopt-=preview
 "set guioptions-=L  "remove left-hand scroll bar
 
 " display indentation guides
-"set list listchars=tab:→\ ,trail:·,extends:»,precedes:«,nbsp:×
-set list listchars=tab:\ \ ,trail:·,extends:»,precedes:«,nbsp:×
+set list listchars=tab:→\ ,trail:·,extends:»,precedes:«,nbsp:×
+"set list listchars=tab:\ \ ,trail:·,extends:»,precedes:«,nbsp:×
 
 
 if has("gui_running")   " GUI color and font settings
@@ -134,7 +136,7 @@ nmap <c-e> <End>
 " open each buffer in its own tabpage
 " use 'gvim -p *' or ':tab sball'
 
-nmap <CR> o
+"nmap <CR> o
 nmap <BS> i<BS>
 imap <C-d> <Del>
 imap <c-s> <esc>:w<cr>a
@@ -155,13 +157,14 @@ set tags=./.tags
 " CtrlP
 """""""""""""""""""""""""""""""
 nmap <leader>f :CtrlPMixed<cr>
-nmap <leader>bf :CtrlPBuffer<cr>
-nmap <leader>mr :CtrlPMRU<cr>
-nmap <leader>. :CtrlPTag<cr>
+nmap <leader>r :CtrlPLine<cr>
 
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+"let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_cmd = 'CtrlPLastMode'
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_extensions = ['line', 'tag']
+"let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.*,_*
 
@@ -180,7 +183,6 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
 let g:ctrlp_max_height = 20
-
 
 " Nerd Tree
 let NERDChristmasTree=1
@@ -208,7 +210,7 @@ let g:jedi#popup_select_first = 0
 " Golang
 let g:go_fmt_fail_silently = 1
 let g:go_fmt_command = "goimports"
-au FileType go nmap <leader>r <Plug>(go-run)
+"au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)

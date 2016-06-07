@@ -1,9 +1,9 @@
 #!/bin/sh
 
 mkdir -p ~/.vimtmp/swap
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +BundleInstall +PluginInstall +qall
 
-# install.sh in YCM
+# install.py in YCM
 
 # for vim-go, do ':GoInstallBinaries' if something is missing.
