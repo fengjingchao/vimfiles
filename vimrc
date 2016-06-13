@@ -136,7 +136,7 @@ nmap <c-e> <End>
 " open each buffer in its own tabpage
 " use 'gvim -p *' or ':tab sball'
 
-"nmap <CR> o
+nmap <CR> o
 nmap <BS> i<BS>
 imap <C-d> <Del>
 imap <c-s> <esc>:w<cr>a
@@ -153,6 +153,9 @@ set tags=./.tags
 "  PLUGIN SETTINGS
 " -----------------------------
 
+" Ag.vim
+let g:ag_working_path_mode="r"
+
 """""""""""""""""""""""""""""""
 " CtrlP
 """""""""""""""""""""""""""""""
@@ -163,7 +166,7 @@ let g:ctrlp_map = '<c-p>'
 "let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_cmd = 'CtrlPLastMode'
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_extensions = ['line', 'tag']
+let g:ctrlp_extensions = ['line']
 "let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.*,_*
@@ -179,7 +182,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.*,_*
     "\ 'fallback': 'find %s -type f'
     "\ }
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn|)$',
+  \ 'dir':  '\v[\/](vendor|third_party)|\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
 let g:ctrlp_max_height = 20
@@ -211,10 +214,10 @@ let g:jedi#popup_select_first = 0
 let g:go_fmt_fail_silently = 1
 let g:go_fmt_command = "goimports"
 "au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap gd <Plug>(go-def)
+"au FileType go nmap <leader>b <Plug>(go-build)
+"au FileType go nmap <leader>t <Plug>(go-test)
+"au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>gd <Plug>(go-def)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
@@ -222,7 +225,7 @@ au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>e <Plug>(go-rename)
+au FileType go nmap <Leader>re <Plug>(go-rename)
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
