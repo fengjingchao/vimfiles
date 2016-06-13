@@ -23,7 +23,7 @@ set ttyfast
 set ttyscroll=3
 set lazyredraw
 
-set autochdir
+"set autochdir
 
 " Matching
 set showmatch       " Show matching brackets.
@@ -155,6 +155,8 @@ set tags=./.tags
 
 " Ag.vim
 let g:ag_working_path_mode="r"
+cmap agt Ag --ignore "*test*" --ignore "*generated*"
+cmap agg Ag --go --ignore "*test*" --ignore "*generated*"
 
 """""""""""""""""""""""""""""""
 " CtrlP
@@ -169,7 +171,7 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_extensions = ['line']
 "let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.*,_*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
 
 "if exists("g:ctrlp_user_command")
   "unlet g:ctrlp_user_command
@@ -182,7 +184,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.*,_*
     "\ 'fallback': 'find %s -type f'
     "\ }
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](vendor|third_party)|\.(git|hg|svn)$',
+  \ 'dir':  '\v[\/](Godeps|vendor|third_party|contrib)|\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
 let g:ctrlp_max_height = 20
