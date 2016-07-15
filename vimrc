@@ -87,7 +87,7 @@ set viminfo='10,\"100,:20,%,n~/.viminfo
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 " TAB setting
-set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 " specific file types tab setting
 au FileType go,Makefile setlocal noexpandtab
@@ -162,7 +162,7 @@ cmap agg Ag --go --ignore "*test*" --ignore "*generated*"
 " CtrlP
 """""""""""""""""""""""""""""""
 nmap <leader>f :CtrlPMixed<cr>
-nmap <leader>r :CtrlPLine<cr>
+"nmap <leader>r :CtrlPLine<cr>
 
 let g:ctrlp_map = '<c-p>'
 "let g:ctrlp_cmd = 'CtrlP'
@@ -193,7 +193,7 @@ let g:ctrlp_max_height = 20
 nmap <F8> :Tagbar<cr>
 
 " Syntastic
-nmap <leader>st :SyntasticToggle<cr>
+"nmap <leader>st :SyntasticToggle<cr>
 
 " youcompleteme
 let g:ycm_min_num_of_chars_for_completion = 1
@@ -209,13 +209,15 @@ let g:jedi#popup_select_first = 0
 " Golang
 let g:go_fmt_fail_silently = 1
 let g:go_fmt_command = "goimports"
-au FileType go nmap <Leader>b <Plug>(go-def)
+let g:go_def_mode = 'godef'
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 au FileType go nmap <Leader>im <Plug>(go-implements)
 au FileType go nmap <Leader>in <Plug>(go-info)
-au FileType go nmap <Leader>re <Plug>(go-rename)
+au FileType go nmap <Leader>e <Plug>(go-rename)
+au FileType go nmap <Leader>r :GoDecls<cr>
+au FileType go nmap <Leader>s :GoDeclsDir<cr>
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
