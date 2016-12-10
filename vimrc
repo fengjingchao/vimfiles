@@ -189,12 +189,6 @@ let g:ctrlp_custom_ignore = {
   \ }
 let g:ctrlp_max_height = 20
 
-" TagBar
-nmap <F8> :Tagbar<cr>
-
-" Syntastic
-"nmap <leader>st :SyntasticToggle<cr>
-
 " youcompleteme
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_seed_identifiers_with_syntax = 1
@@ -225,5 +219,4 @@ let g:go_highlight_structs = 1
 let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
